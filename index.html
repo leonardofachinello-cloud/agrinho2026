@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Agrinho 2026</title>
-
+    <title>Blog Agrinho 2026 • Agro forte, futuro sustentável</title>
     <style>
-        /* Estilos Gerais */
         * {
             margin: 0;
             padding: 0;
@@ -15,41 +13,116 @@
         }
 
         body {
-            background-color: #f4f7f4;
-            color: #333;
-            line-height: 1.6;
+            background-color: #f1f5f1;
+            color: #2c3e2e;
+            line-height: 1.7;
         }
 
-        /* Cabeçalho */
+        /* Header / Navbar */
         header {
-            background-color: #2e7d32; /* Verde sustentável */
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
             color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
         }
 
-        /* Layout Principal */
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: 3fr 1fr;
+        nav ul {
+            display: flex;
             gap: 2rem;
+            list-style: none;
         }
 
-        /* Área dos Posts */
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c8e6c9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(27, 94, 32, 0.88), rgba(46, 125, 50, 0.88)), url('https://picsum.photos/id/1018/2000/900') center/cover no-repeat;
+            color: white;
+            padding: 6rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            max-width: 750px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.95;
+        }
+
+        .hero .tema {
+            display: inline-block;
+            background: #4caf50;
+            padding: 0.5rem 1.4rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #1b5e20;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #c8e6c9;
+            transform: scale(1.05);
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2.5rem;
+        }
+
+        /* Posts */
+        #artigos {
+            scroll-margin-top: 80px;
+        }
+
         .posts-container {
             display: flex;
             flex-direction: column;
@@ -58,92 +131,280 @@
 
         article {
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        article .categoria {
+        article:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .categoria {
             display: inline-block;
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            padding: 0.3rem 0.7rem;
-            border-radius: 4px;
+            background: #e8f5e9;
+            color: #1b5e20;
+            padding: 0.35rem 0.95rem;
+            border-radius: 50px;
             font-size: 0.85rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-weight: 700;
+            margin: 1.5rem 1.5rem 0.8rem;
         }
 
         article h2 {
+            font-size: 1.55rem;
             color: #1b5e20;
-            margin-bottom: 0.5rem;
+            padding: 0 1.5rem;
+            margin-bottom: 0.6rem;
         }
 
         article .data {
+            color: #666;
             font-size: 0.9rem;
-            color: #777;
-            margin-bottom: 1rem;
+            padding: 0 1.5rem 1rem;
         }
 
         article p {
-            margin-bottom: 1rem;
+            padding: 0 1.5rem 1.8rem;
+            color: #444;
         }
 
-        /* Barra Lateral (Sidebar) */
+        /* Sidebar */
         aside {
             background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            padding: 1.8rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             height: fit-content;
+            position: sticky;
+            top: 100px;
         }
 
         aside h3 {
-            color: #2e7d32;
+            color: #1b5e20;
             margin-bottom: 1rem;
-            border-bottom: 2px solid #e8f5e9;
+            border-bottom: 3px solid #c8e6c9;
             padding-bottom: 0.5rem;
         }
 
-        aside p {
+        .categoria-lista {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .categoria-lista li {
+            margin-bottom: 0.6rem;
+        }
+
+        .categoria-lista a {
+            color: #2e7d32;
+            text-decoration: none;
+        }
+
+        .categoria-lista a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sobre o Projeto Section */
+        #sobre-projeto {
+            max-width: 1200px;
+            margin: 3.5rem auto;
+            padding: 3rem 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            scroll-margin-top: 80px;
+        }
+
+        #sobre-projeto h2 {
+            color: #1b5e20;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        #sobre-projeto .conteudo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        #sobre-projeto p {
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        #sobre-projeto ul {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+        }
+
+        #sobre-projeto li {
+            margin-bottom: 0.6rem;
+            color: #2c3e2e;
+        }
+
+        /* Footer */
+        footer {
+            background: #1b5e20;
+            color: #c8e6c9;
+            text-align: center;
+            padding: 2.2rem 1rem;
+            margin-top: 3rem;
             font-size: 0.95rem;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* Responsivo */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            aside {
+                position: static;
+            }
+
+            #sobre-projeto .conteudo {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-
 <body>
 
+    <!-- Navbar -->
     <header>
-        <h1>Blog Agrinho 2026</h1>
-        <p>Sustentabilidade e tecnologia no campo</p>
+        <nav>
+            <div class="logo">🌱 Blog Agrinho 2026</div>
+            <ul>
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#artigos">Artigos</a></li>
+                <li><a href="#sobre-projeto">Sobre o Projeto</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <h1>Agro forte,<br>futuro sustentável</h1>
+        <p>Equilíbrio entre produção e meio ambiente: o caminho para alimentar o mundo sem destruir o planeta.</p>
+        <div class="tema">Tema Oficial do Agrinho 2026</div>
+        <a href="#artigos" class="btn">Ver os artigos →</a>
+    </section>
 
     <main class="container">
 
-        <section class="posts-container">
+        <!-- Posts / Artigos -->
+        <section id="artigos">
+            <div class="posts-container">
 
-            <article>
-                <span class="categoria">Agricultura</span>
-                <h2>O futuro da agricultura sustentável</h2>
-                <div class="data">19 de junho de 2026</div>
-                <p>A tecnologia está transformando a forma como produzimos alimentos...</p>
-            </article>
+                <!-- Post 1 -->
+                <article>
+                    <span class="categoria">Tecnologia no Campo</span>
+                    <h2>O futuro da agricultura sustentável já chegou</h2>
+                    <div class="data">19 de junho de 2026 • Por Equipe do Blog</div>
+                    <p>A tecnologia está revolucionando o campo brasileiro. Com o uso de drones, sensores de solo e inteligência artificial, os produtores conseguem monitorar as lavouras em tempo real, aplicar defensivos apenas onde é necessário e economizar água. Essa é a agricultura de precisão: mais produção com menos impacto ambiental. O equilíbrio entre tecnologia e natureza é o grande desafio e oportunidade do nosso tempo.</p>
+                </article>
 
-            <article>
-                <span class="categoria">Meio ambiente</span>
-                <h2>Preservação e inovação</h2>
-                <div class="data">18 de junho de 2026</div>
-                <p>Novas técnicas ajudam a preservar o solo e aumentar a produtividade...</p>
-            </article>
+                <!-- Post 2 -->
+                <article>
+                    <span class="categoria">Meio Ambiente</span>
+                    <h2>Preservação e inovação: o equilíbrio possível</h2>
+                    <div class="data">18 de junho de 2026 • Por Equipe do Blog</div>
+                    <p>Novas técnicas de manejo, como o plantio direto, a rotação de culturas e o uso de bioinsumos, ajudam a preservar o solo, reduzir a erosão e aumentar a matéria orgânica. O segredo está em produzir mais sem precisar abrir novas áreas de vegetação nativa. Tecnologia e natureza podem (e devem) caminhar juntas para garantirmos um futuro sustentável.</p>
+                </article>
 
+                <!-- Post 3 -->
+                <article>
+                    <span class="categoria">Tecnologia</span>
+                    <h2>Agricultura de Precisão: o futuro do agro brasileiro</h2>
+                    <div class="data">17 de junho de 2026 • Por Equipe do Blog</div>
+                    <p>Tratores autônomos, drones com câmeras multiespectrais e aplicativos que analisam dados em tempo real já são realidade em muitas fazendas do Brasil. Essas ferramentas permitem que o produtor tome decisões mais inteligentes, reduza custos e diminua o uso de insumos químicos. O resultado é um agro mais produtivo, rentável e responsável com o meio ambiente.</p>
+                </article>
+
+                <!-- Post 4 -->
+                <article>
+                    <span class="categoria">Sustentabilidade</span>
+                    <h2>ILPF: Quando a produção e a floresta andam juntas</h2>
+                    <div class="data">16 de junho de 2026 • Por Equipe do Blog</div>
+                    <p>A Integração Lavoura-Pecuária-Floresta (ILPF) é uma das maiores apostas do Brasil para o futuro do campo. Nessa técnica, o produtor cultiva grãos, cria gado e planta árvores na mesma área ao mesmo tempo. O resultado? Mais produtividade, sequestro de carbono, melhoria do solo, bem-estar animal e ainda geração de renda extra com a madeira. Um verdadeiro exemplo de que é possível produzir forte e preservar o meio ambiente ao mesmo tempo.</p>
+                </article>
+
+                <!-- Post 5 -->
+                <article>
+                    <span class="categoria">Cidadania e Futuro</span>
+                    <h2>O papel dos jovens na construção de um agro sustentável</h2>
+                    <div class="data">15 de junho de 2026 • Por Equipe do Blog</div>
+                    <p>A nova geração está chegando ao campo com ideias novas, conhecimento tecnológico e muita vontade de fazer diferente. Participar do Agrinho é uma forma de aprender sobre esses desafios e se tornar protagonista da transformação. O futuro do agro sustentável depende de jovens que entendam que produzir alimentos e preservar a natureza não são coisas opostas — são o mesmo caminho para um Brasil mais forte e verde.</p>
+                </article>
+
+            </div>
         </section>
 
+        <!-- Sidebar -->
         <aside>
-            <h3>Sobre o blog</h3>
-            <p>Este blog fala sobre agricultura sustentável, tecnologia no campo e meio ambiente.</p>
+            <h3>Sobre este blog</h3>
+            <p>Este blog foi criado como parte do <strong>Projeto Agrinho 2026</strong>. Nosso objetivo é mostrar que é possível ter um agro forte, produtivo e ao mesmo tempo sustentável.</p>
+
+            <h3 style="margin-top: 2rem;">Categorias</h3>
+            <ul class="categoria-lista">
+                <li><a href="#artigos">Tecnologia no Campo</a></li>
+                <li><a href="#artigos">Meio Ambiente</a></li>
+                <li><a href="#artigos">Agricultura de Precisão</a></li>
+                <li><a href="#artigos">Sustentabilidade</a></li>
+                <li><a href="#artigos">Cidadania e Futuro</a></li>
+            </ul>
+
+            <h3>Posts mais lidos</h3>
+            <ul class="categoria-lista">
+                <li><a href="#artigos">O futuro da agricultura sustentável já chegou</a></li>
+                <li><a href="#artigos">ILPF: Quando a produção e a floresta andam juntas</a></li>
+                <li><a href="#artigos">O papel dos jovens na construção de um agro sustentável</a></li>
+            </ul>
         </aside>
 
     </main>
+
+    <!-- Seção Sobre o Projeto (agora funcional) -->
+    <section id="sobre-projeto">
+        <h2>Sobre o Projeto Agrinho 2026</h2>
+        
+        <div class="conteudo">
+            <div>
+                <p>O <strong>Agrinho</strong> é um dos maiores programas de educação e responsabilidade social do Brasil. Promovido pelo Sistema FAEP/SENAR-PR em parceria com o Governo do Paraná, ele leva o conhecimento sobre o agronegócio, a sustentabilidade e a cidadania para milhares de estudantes da rede pública e privada.</p>
+                
+                <p style="margin-top: 1rem;">Em 2026, o tema oficial é:</p>
+                <p style="font-size:1.15rem; font-weight:600; color:#1b5e20; margin: 0.8rem 0;">
+                    “Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente”
+                </p>
+                
+                <p>Este blog foi desenvolvido como parte da participação no projeto, com o objetivo de compartilhar informações, reflexões e boas práticas sobre como o campo brasileiro pode crescer de forma responsável e sustentável.</p>
+            </div>
+            
+            <div>
+                <h3 style="color:#1b5e20; margin-bottom:1rem;">O que buscamos com este trabalho:</h3>
+                <ul>
+                    <li>Mostrar que tecnologia e preservação ambiental podem andar juntas</li>
+                    <li>Destacar práticas sustentáveis já usadas no Brasil (como ILPF e agricultura de precisão)</li>
+                    <li>Incentivar os jovens a pensarem no futuro do campo de forma consciente</li>
+                    <li>Contribuir com a divulgação do tema do Agrinho 2026</li>
+                    <li>Valorizar o papel da agricultura familiar e da inovação no agro</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Blog Agrinho 2026</strong> — Tema: <em>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</em></p>
+        <p style="margin-top: 0.6rem; font-size: 0.9rem;">Projeto educacional desenvolvido para o Agrinho 2026 • Todos os direitos aos participantes</p>
+    </footer>
 
 </body>
 </html>
